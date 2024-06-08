@@ -1,0 +1,26 @@
+<main id="home">
+    <div>
+        <h1>¡Bievenido a Nicocetas!</h1>
+        <p>Las mejores recetas</p>
+    </div>
+
+    <div>
+        <h2>¿Buscas algo?</h2>
+        <form (ngSubmit)="search()">
+            <input type="text" placeholder="Receta..." name="buscar" [(ngModel)]="query">
+            <button type="submit">Buscar</button>
+        </form>
+        <div>
+            @if(food.length > 0) {
+            <app-food-card *ngFor="let item of food" [food]="item"></app-food-card>
+            }
+        </div>
+    </div>
+
+    <div>
+        <h2>¿Prefieres explorar categorias?</h2>
+        <div>
+            <app-category-card *ngFor="let item of categories" [category]="item"></app-category-card>
+        </div>
+    </div>
+</main>

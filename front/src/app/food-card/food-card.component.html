@@ -1,0 +1,10 @@
+<div>
+    <img [src]="food.thumbnail" [alt]="food.name">
+    <p>{{ food.name}}</p>
+    <p>{{ food.category }}</p>
+    <p>{{ food.area }}</p>
+    <p style="white-space: pre;">{{ food.instructions }}</p>
+    <ul>
+        <li *ngFor="let ingredient of food.ingredients">{{ ingredient }}</li>
+    </ul>
+</div>

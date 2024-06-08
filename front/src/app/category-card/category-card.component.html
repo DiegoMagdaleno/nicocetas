@@ -1,0 +1,6 @@
+<div>
+    <img [src]="category.strCategoryThumb" [alt]="category.strCategory">
+    <p>{{ category.strCategory }}</p>
+    <p>{{ category.strCategoryDescription }}</p>
+    <button (click)="explore(category.strCategory)">Explorar</button>
+</div>
