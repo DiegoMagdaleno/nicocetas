@@ -1,10 +1,41 @@
-<div>
-    <img [src]="food.thumbnail" [alt]="food.name">
-    <p>{{ food.name}}</p>
-    <p>{{ food.category }}</p>
-    <p>{{ food.area }}</p>
-    <p style="white-space: pre;">{{ food.instructions }}</p>
-    <ul>
-        <li *ngFor="let ingredient of food.ingredients">{{ ingredient }}</li>
-    </ul>
+<div class="rounded overflow-hidden shadow-lg bg-white p-4 m-4">
+    <img [src]="food.thumbnail" [alt]="food.name" class="w-full h-64 object-cover">
+    <div class="px-6 py-4">
+        <div>
+            <p class="text-3xl font-bold mb-2">
+                <fa-icon [icon]="faPlateUtensils" class="text-gray-700 text-base h-12"></fa-icon>
+                {{ food.name }}
+            </p>
+        </div>
+        <div>
+            <p class="text-xl font-bold mb-2">Categoria</p>
+            <p class="text-gray-700 text-base mb-2">
+                <fa-icon [icon]="faList" class="text-gray-700 text-base"></fa-icon>
+                {{ food.category }}
+            </p>
+        </div>
+        <div>
+            <p class="text-xl font-bold mb-2">Region</p>
+            <p class="text-gray-700 text-base mb-2 whitespace-pre-wrap">
+                <fa-icon [icon]="faGlobe" class="text-gray-700 text-base"></fa-icon>
+                {{ food.area }}
+            </p>
+        </div>
+        <div>
+            <p class="text-xl font-bold mb-2">Ingredientes</p>
+            <ul class="list-inside list-none">
+                <li *ngFor="let ingredient of food.ingredients" class="text-gray-700 text-base">
+                    <fa-icon [icon]="faAppleAlt" class="text-gray-700 text-base"></fa-icon>
+                    {{ ingredient }}
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p class="text-xl font-bold mb-2">Instrucciones</p>
+            <p class="text-gray-700 text-base mb-2 whitespace-pre-wrap">
+                <fa-icon [icon]="faFileAlt" class="text-gray-700 text-base"></fa-icon>
+                {{ food.instructions }}
+            </p>
+        </div>
+    </div>
 </div>

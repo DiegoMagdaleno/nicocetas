@@ -1,26 +1,33 @@
-<main id="home">
-    <div>
-        <h1>¡Bievenido a Nicocetas!</h1>
-        <p>Las mejores recetas</p>
+<main class="p-6 bg-light-brown">
+    <div class="flex items-center mb-6 ml-20 mr-20 justify-around">
+        <img src="/assets/img/plate.png">
+        <div>
+            <h1 class="text-6xl font-bold text-center text-amber-900 ">¡Bienvenido a Nicocetas!</h1>
+            <p class="text-2xl text-gray-700 mt-2">Las mejores recetas</p>
+        </div>
     </div>
 
-    <div>
-        <h2>¿Buscas algo?</h2>
-        <form (ngSubmit)="search()">
-            <input type="text" placeholder="Receta..." name="buscar" [(ngModel)]="query">
-            <button type="submit">Buscar</button>
+    <div class="flex flex-col items-center justify-center mb-10 w-full">
+        <h2 class="text-4xl font-semibold text-gray-800 mb-6">¿Buscas algo?</h2>
+        <form class="flex items-center w-full max-w-md" (ngSubmit)="search()">
+            <input type="text" placeholder="Receta..." name="buscar" [(ngModel)]="query"
+                class="w-full p-6 rounded shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <button type="submit" class="w-1/4 px-4 py-6 bg-amber-700 ml-5 text-white rounded shadow-sm flex hover:bg-amber-900">
+                <fa-icon [icon]="faSearch" class="text-white text-base mr-2"></fa-icon>
+                Buscar
+            </button>
         </form>
-        <div>
+        <div class="w-full mt-8 grid grid-cols-2 gap-6">
             @if(food.length > 0) {
             <app-food-card *ngFor="let item of food" [food]="item"></app-food-card>
             }
         </div>
     </div>
 
-    <div>
-        <h2>¿Prefieres explorar categorias?</h2>
-        <div>
-            <app-category-card *ngFor="let item of categories" [category]="item"></app-category-card>
+    <div class="mb-6">
+        <h2 class="text-4xl font-semibold text-gray-800 mb-6">¿Prefieres explorar categorias?</h2>
+        <div class="w-full grid grid-cols-3 gap-6">
+            <app-category-card *ngFor="let item of categories" [category]="item" class="h-120"></app-category-card>
         </div>
     </div>
 </main>
