@@ -4,5 +4,6 @@ export interface Food {
     area: string,
     instructions: string,
     thumbnail: string,
-    ingredients: string[]
+    ingredients: string[],
+    youtube: string,
 }

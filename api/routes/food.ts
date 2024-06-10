@@ -17,6 +17,7 @@ function processResult(data: any[]): Food[] {
       instructions: item.strInstructions,
       thumbnail: item.strMealThumb,
       ingredients: processIngredients(item),
+      youtube: item.strYoutube,
     };
   });
 }
